@@ -20,9 +20,9 @@ body {
 }
 
 .home-hero .section-title {
-  @apply lg:text-7xl;
+  @apply lg:text-6xl;
 }
 
 .home-hero .section-description {
-  @apply lg:text-3xl;
+  @apply lg:text-2xl;
 }
