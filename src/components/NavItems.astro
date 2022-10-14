@@ -1,0 +1,28 @@
+---
+export interface Props {
+  class: string;
+}
+
+const { class: _class } = Astro.props as Props;
+---
+
+<ul class={_class}>
+  <li>
+    <a href="#about">
+      <i class="fa-solid fa-circle-info"></i>
+      About
+    </a>
+  </li>
+  <li>
+    <a href="#meet-the-team">
+      <i class="fa-solid fa-users"></i>
+      Meet The Team
+    </a>
+  </li>
+  <li>
+    <a href="#newsletter">
+      <i class="fa-solid fa-envelope"></i>
+      Newsletter
+    </a>
+  </li>
+</ul>

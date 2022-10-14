@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  @apply w-screen h-screen;
+}
+
+body {
+  @apply m-0 p-0 bg-base-300;
+}
+
+.menu-horizontal :where(li) * {
+  @apply rounded-lg;
+}
+
+.btn-primary {
+  @apply text-slate-900;
+}
+
+.home-hero .section-title {
+  @apply lg:text-7xl;
+}
+
+.home-hero .section-description {
+  @apply lg:text-3xl;
+}
