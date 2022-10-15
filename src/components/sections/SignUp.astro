@@ -1,0 +1,26 @@
+---
+import ContentSection from './Base.astro';
+---
+
+<ContentSection
+  id="sign-up"
+  class="bg-gray-800"
+  title="Sign Up"
+  description="Join the mailing list to receive all the challenges!"
+>
+  <div class="flex flex-col gap-6 justify-center items-center mt-4 mb-7">
+    <div class="form-control w-full max-w-xs">
+      <label class="label justify-center" for="email">
+        <span class="label-text text-xl">Email address</span>
+      </label>
+      <input
+        id="email"
+        type="email"
+        placeholder="iheartvue@example.com"
+        class="input input-lg input-bordered w-full max-w-xs"
+        required
+      />
+    </div>
+    <button class="btn btn-lg">Submit</button>
+  </div>
+</ContentSection>
