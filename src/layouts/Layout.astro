@@ -9,7 +9,7 @@ import NavItems from '../components/NavItems.astro';
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
     <title>Advent of Vue</title>
   </head>
@@ -17,11 +17,14 @@ import NavItems from '../components/NavItems.astro';
     <div class="drawer">
       <input id="drawer-toggle" type="checkbox" class="drawer-toggle" />
       <div class="drawer-content flex flex-col">
-        <div
+        <header
           class="navbar bg-base-100 fixed top-0 w-full z-50 border-b-[1px] border-gray-600"
         >
           <div class="lg:flex-none flex-1">
-            <a href="/" class="lg:mx-5 mx-0 btn btn-ghost normal-case text-xl">
+            <a
+              href="#hero"
+              class="lg:mx-5 mx-0 btn btn-ghost normal-case text-xl"
+            >
               Advent of Vue
             </a>
           </div>
@@ -30,10 +33,10 @@ import NavItems from '../components/NavItems.astro';
               <i class="fa-solid fa-bars text-xl"></i>
             </label>
           </div>
-          <div class="lg:block flex-1 hidden">
+          <nav class="lg:block flex-1 hidden">
             <NavItems class="w-full menu menu-horizontal" />
-          </div>
-        </div>
+          </nav>
+        </header>
         <main>
           <slot />
         </main>
