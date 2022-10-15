@@ -11,40 +11,81 @@ import NavItems from '../components/NavItems.astro';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href="https://adventofvue.com" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#42b883" />
+    <meta name="msapplication-TileColor" content="#42b883" />
+    <meta name="theme-color" content="#42b883" />
     <title>Advent of Vue</title>
+    <meta
+      name="description"
+      content="24 Vue coding challenges delivered one-per-day via email"
+    />
+    <meta name="theme-color" content="#42b883" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://adventofvue.com" />
+    <meta property="og:title" content="Advent of Vue" />
+    <meta
+      property="og:description"
+      content="24 Vue coding challenges delivered one-per-day via email"
+    />
+    <meta
+      property="og:image"
+      content="https://media.discordapp.net/attachments/921388273258070027/1030935541795000471/aov-banner.png"
+    />
+    <meta
+      property="og:image:alt"
+      content="Green gift box with a dark gray ribbon and advent calendar boxes with days from 1 to 24."
+    />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://adventofvue.com" />
+    <meta property="twitter:title" content="Advent of Vue" />
+    <meta
+      property="twitter:description"
+      content="24 Vue coding challenges delivered one-per-day via email"
+    />
+    <meta
+      property="twitter:image"
+      content="https://media.discordapp.net/attachments/921388273258070027/1030935541795000471/aov-banner.png"
+    />
+    <meta
+      property="twitter:image:alt"
+      content="Green gift box with a dark gray ribbon and advent calendar boxes with days from 1 to 24."
+    />
   </head>
   <body>
-    <div class="drawer">
-      <input id="drawer-toggle" type="checkbox" class="drawer-toggle" />
-      <div class="drawer-content flex flex-col">
-        <header
-          class="navbar bg-base-100 fixed top-0 w-full z-50 border-b-[1px] border-gray-600"
-        >
-          <div class="lg:flex-none flex-1">
-            <a
-              href="#hero"
-              class="lg:mx-5 mx-0 btn btn-ghost normal-case text-xl"
-            >
-              Advent of Vue
-            </a>
-          </div>
-          <div class="lg:hidden flex-none">
-            <label for="drawer-toggle" class="btn btn-square btn-ghost">
-              <i class="fa-solid fa-bars text-xl"></i>
-            </label>
-          </div>
-          <nav class="lg:block flex-1 hidden">
-            <NavItems class="w-full menu menu-horizontal" />
-          </nav>
-        </header>
-        <main>
-          <slot />
-        </main>
+    <header
+      class="navbar bg-base-100 fixed top-0 w-full z-50 border-b-[1px] border-gray-600"
+    >
+      <div class="navbar-start">
+        <div class="lg:flex-none flex-1">
+          <a
+            href="#hero"
+            class="lg:mx-5 mx-0 btn btn-ghost normal-case text-xl"
+          >
+            Advent of Vue
+          </a>
+        </div>
+        <div class="lg:flex hidden">
+          <NavItems class="menu menu-horizontal p-0" />
+        </div>
       </div>
-      <div class="drawer-side">
-        <label for="drawer-toggle" class="drawer-overlay"></label>
-        <NavItems class="menu p-4 overflow-y-auto w-80 bg-base-100" />
+      <div class="navbar-end lg:hidden">
+        <div class="dropdown dropdown-end">
+          <label tabindex="0" class="btn btn-square btn-ghost">
+            <i class="fa-solid fa-bars text-xl"></i>
+          </label>
+          <NavItems
+            class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+          />
+        </div>
       </div>
-    </div>
+    </header>
+    <main>
+      <slot />
+    </main>
   </body>
 </html>
