@@ -12,7 +12,7 @@ const { title, description, id, class: _class } = Astro.props as Props;
 <section id={id} class:list={['hero', _class]}>
   <div class="hero-content">
     <div>
-      <h2 class="section-title mt-8 text-5xl text-center font-bold">{title}</h2>
+      <h2 class="section-title mt-6 text-5xl text-center font-bold">{title}</h2>
       {
         description && (
           <p class="section-description text-2xl text-center py-7">
