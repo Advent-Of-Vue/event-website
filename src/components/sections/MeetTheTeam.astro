@@ -1,0 +1,126 @@
+---
+import ContentSection from './Base.astro';
+
+interface TeamMember {
+  name: string;
+  description: string;
+  avatar: string;
+  twitter: string;
+  website: string;
+  twitch?: string;
+  youtube?: string;
+}
+
+const team: TeamMember[] = [
+  {
+    name: 'Maciej Pędzich',
+    description: 'Registered adventofvue.com',
+    avatar: '/mac.png',
+    twitter: 'https://twitter.com/MaciejPedzich',
+    website: 'https://maciejpedzi.ch'
+  },
+  {
+    name: 'Austin Gil',
+    avatar: '/austin.jpg',
+    description: 'Creator of Vuetensils component library',
+    twitter: 'https://twitter.com/heyAustinGil',
+    twitch: 'https://www.twitch.tv/heyaustingil',
+    website: 'https://austingil.com'
+  },
+  {
+    name: 'Michael Thiessen',
+    avatar: '/michael.png',
+    description: 'Mastering Nuxt 3 course teacher',
+    twitter: 'https://twitter.com/MichaelThiessen',
+    website: 'https://michaelnthiessen.com'
+  },
+  {
+    name: 'Matt Maribojoc',
+    avatar: '/matt.png',
+    description: 'Head of Vue Storefront documentation team',
+    twitter: 'https://twitter.com/mattmaribojoc',
+    youtube: 'https://www.youtube.com/learnvue',
+    website: 'https://learnvue.co'
+  },
+  {
+    name: 'Daniel Kelly',
+    avatar: '/daniel.jpg',
+    description: 'Course teacher at Vue School',
+    twitter: 'https://twitter.com/danielkelly_io',
+    website: 'https://danielkelly.io'
+  },
+  {
+    name: 'Markus Oberlehner',
+    avatar: '/markus.jpg',
+    description: 'Creator of vue-lazy-hydration library',
+    twitter: 'https://twitter.com/MaOberlehner',
+    website: 'https://markus.oberlehner.net'
+  }
+];
+---
+
+<ContentSection
+  id="meet-the-team"
+  title="Meet The Team"
+  description="Advent of Vue was made possible by these amazing people:"
+>
+  <div
+    class="grid gap-11 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 m-8 md:mt-6 lg:mt-10 z-10"
+  >
+    {
+      team.map((member) => (
+        <div class="card card-compact w-full p-3 text-center bg-base-100 shadow-xl z-10">
+          <figure class="max-w-md h-auto p-5 pb-2">
+            <img
+              class="rounded-md shadow-2xl"
+              src={member.avatar}
+              alt={'Avatar of ' + member.name}
+            />
+          </figure>
+          <div class="card-body">
+            <h3 class="card-title text-2xl justify-center">{member.name}</h3>
+            <p class="text-lg">{member.description}</p>
+            <div class="card-actions text-2xl pt-3 gap-4 items-center justify-center">
+              <a
+                href={member.twitter}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:text-[#1da1f2]"
+              >
+                <i class="fa-brands fa-twitter" />
+              </a>
+              {member.youtube && (
+                <a
+                  href={member.youtube}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hover:text-[#ff0000]"
+                >
+                  <i class="fa-brands fa-youtube" />
+                </a>
+              )}
+              {member.twitch && (
+                <a
+                  href={member.twitch}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hover:text-[#9146ff]"
+                >
+                  <i class="fa-brands fa-twitch" />
+                </a>
+              )}
+              <a
+                href={member.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:text-primary"
+              >
+                <i class="fa-solid fa-globe" />
+              </a>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</ContentSection>
