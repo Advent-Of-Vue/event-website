@@ -14,7 +14,7 @@ interface TeamMember {
 const team: TeamMember[] = [
   {
     name: 'Maciej Pędzich',
-    description: 'Registered adventofvue.com',
+    description: 'Vuenthusiast and Lipton Ice Tea junkie',
     avatar: '/mac.png',
     twitter: 'https://twitter.com/MaciejPedzich',
     website: 'https://maciejpedzi.ch'
@@ -36,8 +36,8 @@ const team: TeamMember[] = [
   },
   {
     name: 'Matt Maribojoc',
-    avatar: '/matt.png',
-    description: 'Head of Vue Storefront documentation team',
+    avatar: '/matt.jpg',
+    description: 'Vue Storefront DX Team and Creator of LearnVue',
     twitter: 'https://twitter.com/mattmaribojoc',
     youtube: 'https://www.youtube.com/learnvue',
     website: 'https://learnvue.co'
@@ -69,12 +69,13 @@ const team: TeamMember[] = [
   >
     {
       team.map((member) => (
-        <div class="card card-compact w-full p-3 text-center bg-base-100 shadow-xl z-10">
+        <div class="card card-compact w-full p-3 text-center bg-base-200 shadow-xl z-10">
           <figure class="max-w-md h-auto p-5 pb-2">
             <img
               class="rounded-md shadow-2xl"
               src={member.avatar}
               alt={'Avatar of ' + member.name}
+              loading="lazy"
             />
           </figure>
           <div class="card-body">
