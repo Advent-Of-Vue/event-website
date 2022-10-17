@@ -9,12 +9,13 @@ interface TeamMember {
   website: string;
   twitch?: string;
   youtube?: string;
+  decreasedFontSize?: boolean;
 }
 
 const team: TeamMember[] = [
   {
     name: 'Maciej Pędzich',
-    description: 'Vuenthusiast and Lipton Ice Tea junkie',
+    description: 'Vuenthusiast commonly known as "Mac"',
     avatar: '/avatars/mac.png',
     twitter: 'https://twitter.com/MaciejPedzich',
     website: 'https://maciejpedzi.ch'
@@ -45,7 +46,7 @@ const team: TeamMember[] = [
   {
     name: 'Daniel Kelly',
     avatar: '/avatars/daniel.jpg',
-    description: 'Content creator and course teacher at Vue School',
+    description: 'Lead Instructor at Vue School',
     twitter: 'https://twitter.com/danielkelly_io',
     website: 'https://danielkelly.io'
   },
@@ -54,7 +55,15 @@ const team: TeamMember[] = [
     avatar: '/avatars/markus.jpg',
     description: 'Creator of vue-lazy-hydration library',
     twitter: 'https://twitter.com/MaOberlehner',
-    website: 'https://markus.oberlehner.net'
+    website: 'https://markus.oberlehner.net',
+    decreasedFontSize: true
+  },
+  {
+    name: 'Marc Backes',
+    avatar: '/avatars/marc.jpg',
+    description: 'DevRel Lead at WeAreDevelopers',
+    twitter: 'https://twitter.com/themarcba',
+    website: 'https://marc.dev'
   }
 ];
 ---
@@ -78,9 +87,20 @@ const team: TeamMember[] = [
               loading="lazy"
             />
           </figure>
-          <div class="card-body">
-            <h3 class="card-title text-2xl justify-center">{member.name}</h3>
-            <p class="text-lg">{member.description}</p>
+          <div class="card-body items-stretch">
+            <h3
+              class:list={[
+                'card-title justify-center',
+                member.decreasedFontSize ? 'text-xl' : 'text-2xl'
+              ]}
+            >
+              {member.name}
+            </h3>
+            <div
+              class:list={['flex-1 flex justify-center items-center text-lg']}
+            >
+              {member.description}
+            </div>
             <div class="card-actions text-2xl pt-3 gap-4 items-center justify-center">
               <a
                 href={member.twitter}
