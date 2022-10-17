@@ -10,16 +10,7 @@ const { title, description, id, class: _class } = Astro.props as Props;
 ---
 
 <section id={id} class:list={['hero', _class]}>
-  <div class="hero-content flex-col md:flex-row-reverse gap-16">
-    {
-      id === 'hero' && (
-        <img
-          src="/aov-logo-transparent.png"
-          alt="Advent of Vue event logo"
-          class="md:block hidden max-w-sm"
-        />
-      )
-    }
+  <div class="hero-content flex-col md:flex-row gap-16 my-6">
     <div>
       {
         id === 'hero' ? (
@@ -41,5 +32,14 @@ const { title, description, id, class: _class } = Astro.props as Props;
       }
       <slot />
     </div>
+    {
+      id === 'hero' && (
+        <img
+          src="/aov-logo-transparent.png"
+          alt="Advent of Vue event logo"
+          class="md:block hidden max-w-sm"
+        />
+      )
+    }
   </div>
 </section>
