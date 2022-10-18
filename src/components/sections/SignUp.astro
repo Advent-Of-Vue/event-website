@@ -4,16 +4,14 @@ import ContentSection from './Base.astro';
 
 <ContentSection
   id="sign-up"
-  class="bg-gray-800 text-neutral-content"
+  class="bg-base-200 text-inherit"
   title="Sign Up"
   description="Join the mailing list to receive all the challenges!"
 >
   <div class="flex flex-col gap-4 justify-center items-center mt-4 mb-7">
     <div class="form-control w-full max-w-xs">
       <label class="label justify-center" for="email">
-        <span class="label-text text-xl text-neutral-content">
-          Email address
-        </span>
+        <span class="label-text text-xl text-inherit">Email address</span>
       </label>
       <input
         id="email"
@@ -23,6 +21,6 @@ import ContentSection from './Base.astro';
         required
       />
     </div>
-    <button class="btn">Submit</button>
+    <button class="btn focus:outline-2 focus:outline-primary">Submit</button>
   </div>
 </ContentSection>

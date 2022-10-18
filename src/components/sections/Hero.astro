@@ -12,12 +12,15 @@ import ContentSection from './Base.astro';
     class="flex md:flex-row flex-col justify-center md:items-start items-center gap-4"
   >
     <a href="#about" class="btn btn-primary">
-      <i class="fa-solid fa-circle-info mr-2"></i>
+      <i class="fa-solid fa-circle-info mr-2" aria-hidden="true"></i>
       Find out more
     </a>
-    <a href="#sign-up" class="btn btn-outline">
-      <i class="fa-solid fa-user-plus mr-2"></i>
-      Sign Up
+    <a
+      href="#sign-up"
+      class="btn btn-outline focus:outline-2 focus:outline-primary"
+    >
+      <i class="fa-solid fa-user-plus mr-2" aria-hidden="true"></i>
+      Sign up
     </a>
   </div>
 </ContentSection>
