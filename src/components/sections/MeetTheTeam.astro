@@ -3,67 +3,70 @@ import ContentSection from './Base.astro';
 
 interface TeamMember {
   name: string;
-  description: string;
+  tagline: string;
   avatar: string;
   twitter: string;
   website: string;
-  twitch?: string;
-  youtube?: string;
-  decreasedFontSize?: boolean;
+  decreasedHeaderSize?: boolean;
 }
 
 const team: TeamMember[] = [
   {
-    name: 'Maciej Pędzich',
-    description: 'Vuenthusiast commonly known as "Mac"',
-    avatar: '/avatars/mac.png',
-    twitter: 'https://twitter.com/MaciejPedzich',
-    website: 'https://maciejpedzi.ch'
-  },
-  {
-    name: 'Austin Gil',
-    avatar: '/avatars/austin.jpg',
-    description: 'Creator of Vuetensils component library',
-    twitter: 'https://twitter.com/heyAustinGil',
-    twitch: 'https://www.twitch.tv/heyaustingil',
-    website: 'https://austingil.com'
+    name: 'Matt Maribojoc',
+    avatar: '/avatars/matt.jpg',
+    tagline: 'Vue Storefront DX Team and creator of LearnVue',
+    twitter: 'https://twitter.com/mattmaribojoc',
+    website: 'https://learnvue.co'
   },
   {
     name: 'Michael Thiessen',
     avatar: '/avatars/michael.png',
-    description: 'Mastering Nuxt 3 course teacher',
+    tagline: 'Mastering Nuxt 3 course teacher',
     twitter: 'https://twitter.com/MichaelThiessen',
     website: 'https://michaelnthiessen.com'
   },
   {
-    name: 'Matt Maribojoc',
-    avatar: '/avatars/matt.jpg',
-    description: 'Vue Storefront DX Team and Creator of LearnVue',
-    twitter: 'https://twitter.com/mattmaribojoc',
-    youtube: 'https://www.youtube.com/learnvue',
-    website: 'https://learnvue.co'
-  },
-  {
-    name: 'Daniel Kelly',
-    avatar: '/avatars/daniel.jpg',
-    description: 'Lead Instructor at Vue School',
-    twitter: 'https://twitter.com/danielkelly_io',
-    website: 'https://danielkelly.io'
-  },
-  {
-    name: 'Markus Oberlehner',
-    avatar: '/avatars/markus.jpg',
-    description: 'Creator of vue-lazy-hydration library',
-    twitter: 'https://twitter.com/MaOberlehner',
-    website: 'https://markus.oberlehner.net',
-    decreasedFontSize: true
+    name: 'Jessica Sachs',
+    avatar: '/avatars/jess.jpg',
+    tagline: 'Staff Software Engineer at PathAI',
+    twitter: 'https://twitter.com/_jessicasachs',
+    website: 'https://jess.sh'
   },
   {
     name: 'Marc Backes',
     avatar: '/avatars/marc.jpg',
-    description: 'DevRel Lead at WeAreDevelopers',
+    tagline: 'DevRel Lead at WeAreDevelopers',
     twitter: 'https://twitter.com/themarcba',
     website: 'https://marc.dev'
+  },
+  {
+    name: 'Daniel Kelly',
+    avatar: '/avatars/daniel.jpg',
+    tagline: 'Lead Instructor at Vue School',
+    twitter: 'https://twitter.com/danielkelly_io',
+    website: 'https://danielkelly.io'
+  },
+  {
+    name: 'Konstantin Bifert',
+    avatar: '/avatars/konstantin.jpg',
+    tagline: "Bridges' builder for the Vue community",
+    twitter: 'https://twitter.com/kissu_io',
+    website: 'https://kissu.io'
+  },
+  {
+    name: 'Markus Oberlehner',
+    avatar: '/avatars/markus.jpg',
+    tagline: 'Creator of vue-lazy-hydration library',
+    twitter: 'https://twitter.com/MaOberlehner',
+    website: 'https://markus.oberlehner.net',
+    decreasedHeaderSize: true
+  },
+  {
+    name: 'Maciej Pędzich',
+    tagline: 'Vuenthusiast commonly known as "Mac"',
+    avatar: '/avatars/mac.png',
+    twitter: 'https://twitter.com/MaciejPedzich',
+    website: 'https://maciejpedzi.ch'
   }
 ];
 ---
@@ -74,7 +77,7 @@ const team: TeamMember[] = [
   description="Advent of Vue was made possible by these amazing people:"
 >
   <div
-    class="grid gap-11 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 m-10 md:mt-6 lg:mt-10 z-10"
+    class="grid gap-11 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:m-10 m-8 z-10"
   >
     {
       team.map((member) => (
@@ -83,7 +86,7 @@ const team: TeamMember[] = [
             <img
               class="rounded-md shadow-2xl"
               src={member.avatar}
-              alt={'Avatar of ' + member.name}
+              alt={`${member.name}'s avatar`}
               loading="lazy"
             />
           </figure>
@@ -91,50 +94,26 @@ const team: TeamMember[] = [
             <h3
               class:list={[
                 'card-title justify-center',
-                member.decreasedFontSize ? 'text-xl' : 'text-2xl'
+                member.decreasedHeaderSize ? 'text-[1.4rem]' : 'text-2xl'
               ]}
             >
               {member.name}
             </h3>
-            <div
-              class:list={['flex-1 flex justify-center items-center text-lg']}
-            >
-              {member.description}
+            <div class="flex-1 flex justify-center items-center text-lg">
+              {member.tagline}
             </div>
-            <div class="card-actions text-2xl pt-3 gap-4 items-center justify-center">
+            <div class="card-actions text-2xl pt-3 gap-5 items-center justify-center">
               <a
                 href={member.twitter}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="hover:text-[#1da1f2]"
+                class="hover:text-[#1da1f2] focus:text-[#1da1f2]"
+                aria-label={`${member.twitter}'s Twitter page'`}
               >
                 <i class="fa-brands fa-twitter" />
               </a>
-              {member.youtube && (
-                <a
-                  href={member.youtube}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="hover:text-[#ff0000]"
-                >
-                  <i class="fa-brands fa-youtube" />
-                </a>
-              )}
-              {member.twitch && (
-                <a
-                  href={member.twitch}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="hover:text-[#9146ff]"
-                >
-                  <i class="fa-brands fa-twitch" />
-                </a>
-              )}
               <a
                 href={member.website}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="hover:text-primary"
+                class="hover:text-primary focus:text-primary"
+                aria-label={`${member.twitter}'s website`}
               >
                 <i class="fa-solid fa-globe" />
               </a>
