@@ -17,12 +17,12 @@ import ContentSection from './Base.astro';
     target="_blank"
   >
     <div class="form-control w-full max-w-xs">
-      <label class="label justify-center" for="member_email"
-        >Email address</label
-      >
+      <label class="text-lg label justify-center" for="member_email">
+        Email address
+      </label>
       <input
         class="input input-bordered w-full max-w-xs"
-        placeholder="E.g. iheartvue@example.com"
+        placeholder="iheartvue@example.com"
         type="email"
         name="member[email]"
         id="member_email"
@@ -39,16 +39,16 @@ import ContentSection from './Base.astro';
         Subscribe
       </button>
     </div>
-    <div class="text-base">
-      By subscribing, you agree with Revue's <a
-        class="dark:text-primary text-blue-500 underline hover:text-primary-focus"
-        target="_blank"
-        href="https://www.getrevue.co/terms">Terms of Service</a
-      > and <a
-        class="dark:text-primary text-blue-500 underline hover:text-primary-focus"
-        target="_blank"
-        href="https://www.getrevue.co/privacy">Privacy Policy</a
-      >.
-    </div>
   </form>
+  <div class="mt-5 text-sm text-center">
+    By subscribing, you agree with Revue's <a
+      class="dark:text-primary text-blue-500 underline hover:text-primary-focus"
+      target="_blank"
+      href="https://www.getrevue.co/terms">Terms of Service</a
+    > and <a
+      class="dark:text-primary text-blue-500 underline hover:text-primary-focus"
+      target="_blank"
+      href="https://www.getrevue.co/privacy">Privacy Policy</a
+    >.
+  </div>
 </ContentSection>
