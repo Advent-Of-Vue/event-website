@@ -14,7 +14,6 @@ import ContentSection from './Base.astro';
     method="post"
     id="revue-form"
     name="revue-form"
-    target="_blank"
   >
     <div class="form-control w-full max-w-xs">
       <label class="text-lg label justify-center" for="member_email">
@@ -29,16 +28,13 @@ import ContentSection from './Base.astro';
         required
       />
     </div>
-    <div class="revue-form-actions">
-      <button
-        class="btn focus:outline-2 focus:outline-primary"
-        type="submit"
-        name="member[subscribe]"
-        id="member_submit"
-      >
-        Subscribe
-      </button>
-    </div>
+    <input
+      class="btn focus:outline-2 focus:outline-primary"
+      type="submit"
+      name="member[subscribe]"
+      id="member_submit"
+      value="Submit"
+    />
     <div class="my-5 text-base text-center">
       By subscribing, you agree with Revue's <a
         class="dark:text-primary text-blue-500 underline hover:text-primary-focus"
